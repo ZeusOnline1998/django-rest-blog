@@ -1,0 +1,29 @@
+name: Django Test
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the tests on
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11  # Choose the Python version you need
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+      working-directory: .
+
+    - name: Run Django Tests
+      run: |
+        python manage.py test
+      working-directory: .
