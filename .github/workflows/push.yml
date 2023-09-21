@@ -11,10 +11,17 @@ jobs:
 
     steps:
     - name: Checkout Repository
+<<<<<<< HEAD
       uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v3
+=======
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+>>>>>>> 0ac56671efe3a938722717a7c739f87fefa00d11
       with:
         python-version: 3.11  # Choose the Python version you need
 
